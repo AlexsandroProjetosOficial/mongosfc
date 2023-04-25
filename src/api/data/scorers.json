@@ -1,0 +1,75 @@
+[
+	{
+		"player": "Xandy",
+		"scorer": 26
+	},
+	{
+		"player": "Leandro ",
+		"scorer": 25
+	},
+	{
+		"player": "Alexsandro",
+		"scorer": 24,
+		"image": "https://github.com/AlexsandroProjetosOficial.png"
+	},
+	{
+		"player": "Thiago",
+		"scorer": 24
+	},
+	{
+		"player": "Fernando ",
+		"scorer": 21
+	},
+	{
+		"player": "Maico",
+		"scorer": 15
+	},
+	{
+		"player": "Fio",
+		"scorer": 15
+	},
+	{
+		"player": "Douglas",
+		"scorer": 12
+	},
+	{
+		"player": "Cleiton",
+		"scorer": 11
+	},
+	{
+		"player": "Marquinhos",
+		"scorer": 9
+	},
+	{
+		"player": "Matheus",
+		"scorer": 7
+	},
+	{
+		"player": "Jimmy",
+		"scorer": 6
+	},
+	{
+		"player": "Emerson",
+		"scorer": 5
+	},
+	{
+		"player": "Waguinho",
+		"scorer": 4
+	},
+	{
+		"player": "Henrique",
+		"scorer": 3
+	},
+	{
+		"player": "Wand",
+		"scorer": 2
+	},
+	{
+		"player": "Luiz",
+		"scorer": 2
+	},
+	{
+		"player": "Valter",
+		"scorer": 1
+	}
+]

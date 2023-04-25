@@ -1,0 +1,20 @@
+[
+	{
+		"timeA": "Mongos A",
+		"timeAScorer": 12,
+		"timeB": "Mongos B",
+		"timeBScorer": 7,
+		"weFriendly": "we",
+		"totalScorer": 19,
+		"results": "victorieDefeats"
+	},
+	{
+		"timeA": "Mongos",
+		"timeAScorer": 10,
+		"timeB": "Amigos do Cris",
+		"timeBScorer": 2,
+		"weFriendly": "friendly",
+		"totalScorer": 10,
+		"results": "victorie"
+	}
+]

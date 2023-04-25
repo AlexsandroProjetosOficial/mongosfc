@@ -1,11 +1,8 @@
 import Image from 'next/image'
-import appPreviewImg from '../assets/app-nlw-copa-preview.png';
-import logoImg from '../assets/logo.svg';
 import logo from '../assets/futebol.png';
-import usersAvatarExampleImg from '../assets/users-avatar-example.png';
-import alexsandro from '../assets/alexsandro.jpg';
-import iconCheckImg from '../assets/icon-check.svg';
-import { number } from 'prop-types';
+import scorers from '../api/data/scorers.json'
+import players from '../api/data/players.json'
+import games from '../api/data/games.json'
 
 interface IHome {
 	scorers: {
@@ -177,81 +174,7 @@ export default function Home({ scorers, playerMatch, games }: IHome) {
 }
 
 export const getServerSideProps = async () => {
-	const scorers = [
-		{
-			player: 'Xandy',
-			scorer: 26
-		},
-		{
-			player: 'Leandro ',
-			scorer: 25
-		},
-		{
-			player: 'Alexsandro',
-			scorer: 24,
-			image: "https://github.com/AlexsandroProjetosOficial.png"
-		},
-		{
-			player: 'Thiago',
-			scorer: 24
-		},
-		{
-			player: 'Fernando ',
-			scorer: 21
-		},
-		{
-			player: 'Maico',
-			scorer: 15
-		},
-		{
-			player: 'Fio',
-			scorer: 15
-		},
-		{
-			player: 'Douglas',
-			scorer: 12
-		},
-		{
-			player: 'Cleiton',
-			scorer: 11
-		},
-		{
-			player: 'Marquinhos',
-			scorer: 9
-		},
-		{
-			player: 'Matheus',
-			scorer: 7
-		},
-		{
-			player: 'Jimmy',
-			scorer: 6
-		},
-		{
-			player: 'Emerson',
-			scorer: 5
-		},
-		{
-			player: 'Waguinho',
-			scorer: 4
-		},
-		{
-			player: 'Henrique',
-			scorer: 3
-		},
-		{
-			player: 'Wand',
-			scorer: 2
-		},
-		{
-			player: 'Luiz',
-			scorer: 2
-		},
-		{
-			player: 'Valter',
-			scorer: 1
-		}
-	].sort(function (a, b) {
+	scorers.sort(function (a, b) {
 		if (a.player > b.player) {
 			return 1;
 		}
@@ -263,81 +186,7 @@ export const getServerSideProps = async () => {
 		return b.scorer - a.scorer;
 	});
 
-	const playerMatch = [
-		{
-			player: 'Moacir',
-			scorer: 28
-		},
-		{
-			player: 'Wand ',
-			scorer: 15
-		},
-		{
-			player: 'Guilerme',
-			scorer: 14
-		},
-		{
-			player: 'Fio',
-			scorer: 11
-		},
-		{
-			player: 'Jimmy',
-			scorer: 10
-		},
-		{
-			player: 'Thiago',
-			scorer: 9
-		},
-		{
-			player: 'Leandro',
-			scorer: 7
-		},
-		{
-			player: 'Fernando',
-			scorer: 7
-		},
-		{
-			player: 'Cleiton',
-			scorer: 7
-		},
-		{
-			player: 'Marquinhos',
-			scorer: 6
-		},
-		{
-			player: 'Betão',
-			scorer: 6
-		},
-		{
-			player: 'Douglas',
-			scorer: 6
-		},
-		{
-			player: 'Maico',
-			scorer: 4
-		},
-		{
-			player: 'Henrique',
-			scorer: 3
-		},
-		{
-			player: 'Alexsandro',
-			scorer: 3,
-			image: "https://github.com/AlexsandroProjetosOficial.png"
-		},
-		{
-			player: 'Lekão',
-			scorer: 2
-		},
-		{
-			player: 'Valter',
-			scorer: 1
-		},
-		{
-			player: 'Luiz',
-			scorer: 1
-		},
-	].sort(function (a, b) {
+	players.sort(function (a, b) {
 		if (a.player > b.player) {
 			return 1;
 		}
@@ -348,32 +197,11 @@ export const getServerSideProps = async () => {
 	}).sort(function (a, b) {
 		return b.scorer - a.scorer;
 	});
-
-	const games = [
-		{
-			timeA: "Mongos A",
-			timeAScorer: 12,
-			timeB: "Mongos B",
-			timeBScorer: 7,
-			weFriendly: 'we',
-			totalScorer: 19,
-			results: 'victorieDefeats'
-		},
-		{
-			timeA: "Mongos",
-			timeAScorer: 10,
-			timeB: "Amigos do Cris",
-			timeBScorer: 2,
-			weFriendly: 'friendly',
-			totalScorer: 10,
-			results: 'victorie'
-		}
-	]
 
 	return {
 		props: {
 			scorers: scorers,
-			playerMatch: playerMatch,
+			playerMatch: players,
 			games: games
 		}
 	}
