@@ -48,7 +48,7 @@ export default function Home({ scorers, playerMatch, games }: IHome) {
 									<span className='text-yellow-500 space-x-1'>{index + 1}º</span>
 									<Image
 										src={item.image}
-										alt={item.player}
+										alt={item.image ? item.player : ''}
 										className='rounded-full space-x-1'
 										width={30}
 										height={30}
@@ -61,7 +61,7 @@ export default function Home({ scorers, playerMatch, games }: IHome) {
 									<span className='text-ignite-500 space-x-1'>{index + 1}º</span>
 									<Image
 										src={item.image}
-										alt={item.player}
+										alt={item.image ? item.player : ''}
 										className='rounded-full space-x-1'
 										width={50}
 										height={50}
@@ -86,7 +86,7 @@ export default function Home({ scorers, playerMatch, games }: IHome) {
 									<span className='text-yellow-500 space-x-1'>{index + 1}º</span>
 									<Image
 										src={item.image}
-										alt={item.player}
+										alt={item.image ? item.player : ''}
 										className='rounded-full space-x-1'
 										width={30}
 										height={30}
