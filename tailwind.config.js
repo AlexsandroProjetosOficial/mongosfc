@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     './src/**/*.tsx'
@@ -11,6 +12,10 @@ module.exports = {
 
 			backgroundImage: {
 				app: 'url(/app-bg.png)'
+			},
+
+			height: {
+				100: "height: 25rem"
 			},
 
 			colors: {
@@ -33,5 +38,7 @@ module.exports = {
 			}
 		},
   },
-  plugins: [],
+  plugins: [
+		require('tailwind-scrollbar')
+	],
 }
