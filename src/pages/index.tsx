@@ -141,7 +141,22 @@ export default function Home({ scorers, playerMatch, games }: IHome) {
 									games.filter(item => item.weFriendly === 'friendly').reduce((acumulador, valorAtual) => { return acumulador + valorAtual.totalScorer }, 0)
 								}
 								{" "} Gols marcado
-							</strong>						</div>
+							</strong>
+							<strong className='text-gray-100 text-sm flex items-center space-x-1'>
+								{
+									games.filter(item => item.weFriendly === 'friendly').reduce((acumulador, valorAtual) => { return acumulador + valorAtual.timeBScorer }, 0)
+								}
+								{" "} Gols sofridos
+							</strong>
+							<strong className='text-gray-100 text-sm flex items-center space-x-1'>
+								{
+									(games.filter(item => item.weFriendly === 'friendly').reduce((acumulador, valorAtual) => { return acumulador + valorAtual.totalScorer }, 0)
+									- games.filter(item => item.weFriendly === 'friendly').reduce((acumulador, valorAtual) => { return acumulador + valorAtual.timeBScorer }, 0))
+								}
+								{" "} saldo gols
+							</strong>
+							<strong className='text-gray-100 text-sm flex items-center space-x-1'>{((games.filter(item => item.results === 'victorie' && item.weFriendly === 'friendly').length / games.filter(item => item.weFriendly === 'friendly').length) * 100)}% Apro.</strong>
+						</div>
 					</div>
 
 					<div className='mt-10 flex items-center gap-2 flex-col'>
