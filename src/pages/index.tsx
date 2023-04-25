@@ -51,7 +51,7 @@ export default function Home({ scorers, playerMatch, games }: IHome) {
 										height={30}
 									/>
 									<span className='text-yellow-500 space-x-1'>{item.player}</span>
-									<span className='text-gray-100 space-x-1'>{item.scorer} votos</span>
+									<span className='text-gray-100 space-x-1'>{item.scorer} gols</span>
 								</strong>
 							) : (
 								<strong className='text-gray-100 text-xl flex items-center space-x-1'>
