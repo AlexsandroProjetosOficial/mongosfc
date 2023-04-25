@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import logo from '../assets/futebol.png';
+import logo from '../assets/logo.png';
 import scorers from '../api/data/scorers.json'
 import players from '../api/data/players.json'
 import games from '../api/data/games.json'
@@ -28,17 +28,19 @@ interface IHome {
 export default function Home({ scorers, playerMatch, games }: IHome) {
 	return (
 		<>
-			<div className='max-w-[1124px] h-screen mx-auto grid sm:grid-cols-1 md:grid-cols-3 items-center gap-28'>
-				<main className='mt-14 ml-5 text-white text-5xl font-bold leading-tight'>
-					<Image
-						src={logo}
-						alt="NLW Copa"
-					/>
+			<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+				<Image
+					src={logo}
+					alt="NLW Copa"
+					width={200}
+					height={200}
+				/>
+			</div>
+			<div className='max-w-[1124px] mx-auto grid sm:grid-cols-1 md:grid-cols-3 items-center gap-28'>
+				<main className='text-white text-3xl font-bold leading-tight'>
+					<h1>Top scorers!</h1>
 
-
-					<h1 className='mt-14 text-white text-5xl font-bold leading-tight'>Top scorers!</h1>
-
-					<div className='mt-10 flex items-left gap-2 flex-col overflow-y-auto h-96 scrollbar-thin scrollbar-thumb-ignite-500 scrollbar-track-yellow-500'>
+					<div className='mt-5 flex items-left gap-2 flex-col overflow-y-auto h-96 scrollbar-thin scrollbar-thumb-ignite-500 scrollbar-track-yellow-500'>
 						{scorers.map((item: any, index: number) => (
 							index > 2 ? (
 								<strong className='text-gray-100 text-sm flex items-center space-x-1'>
@@ -73,10 +75,10 @@ export default function Home({ scorers, playerMatch, games }: IHome) {
 
 				</main >
 
-				<div className='mt-14 ml-5 text-white text-5xl font-bold leading-tight'>
-					<h1 className='mt-14 text-white text-5xl font-bold leading-tight'>Players of the match!</h1>
+				<div className='text-white text-3xl font-bold leading-tight'>
+					<h1 >Melhores partida!</h1>
 
-					<div className='mt-10 flex items-left gap-2 flex-col overflow-y-auto h-96 scrollbar-thin scrollbar-thumb-ignite-500 scrollbar-track-yellow-500'>
+					<div className='mt-5 flex items-left gap-2 flex-col overflow-y-auto h-96 scrollbar-thin scrollbar-thumb-ignite-500 scrollbar-track-yellow-500'>
 						{playerMatch.map((item: any, index: number) => (
 							index > 2 ? (
 								<strong className='text-gray-100 text-sm flex items-center space-x-1'>
@@ -110,10 +112,10 @@ export default function Home({ scorers, playerMatch, games }: IHome) {
 					</div>
 				</div>
 
-				<div className='mt-14 ml-5 text-white text-5xl font-bold leading-tight'>
-					<h1 className='text-white text-5xl font-bold leading-tight'>Games!</h1>
+				<div className='text-white text-5xl font-bold leading-tight'>
+					<h1>Jogos</h1>
 
-					<div className='flex items-center gap-2 space-x-1'>
+					<div className='mt-5 flex items-center gap-2 space-x-1'>
 						<div className=' flex items-left gap-2 flex-col'>
 							<h5 className=' text-ignite-500 text-xl font-bold leading-tight'>Mongos x Mongos</h5>
 							<strong className='text-gray-100 text-sm flex items-center space-x-1'>{games.filter(item => item.weFriendly === 'we').length} Jogos</strong>
@@ -148,7 +150,7 @@ export default function Home({ scorers, playerMatch, games }: IHome) {
 							<strong className='text-gray-100 text-sm flex items-center space-x-1'>
 								{
 									(games.filter(item => item.weFriendly === 'friendly').reduce((acumulador, valorAtual) => { return acumulador + valorAtual.totalScorer }, 0)
-									- games.filter(item => item.weFriendly === 'friendly').reduce((acumulador, valorAtual) => { return acumulador + valorAtual.timeBScorer }, 0))
+										- games.filter(item => item.weFriendly === 'friendly').reduce((acumulador, valorAtual) => { return acumulador + valorAtual.timeBScorer }, 0))
 								}
 								{" "} saldo gols
 							</strong>
