@@ -11,6 +11,7 @@ interface IHome {
 	scorers: {
 		player: string;
 		scorer: number;
+		image?: string;
 	}[];
 	playerMatch: {
 		player: string;
@@ -46,8 +47,8 @@ export default function Home({ scorers, playerMatch, games }: IHome) {
 								<strong className='text-gray-100 text-sm flex items-center space-x-1'>
 									<span className='text-yellow-500 space-x-1'>{index + 1}º</span>
 									<Image
-										src=""
-										alt=""
+										src={item.image}
+										alt={item.player}
 										className='rounded-full space-x-1'
 										width={30}
 										height={30}
@@ -59,8 +60,8 @@ export default function Home({ scorers, playerMatch, games }: IHome) {
 								<strong className='text-gray-100 text-xl flex items-center space-x-1'>
 									<span className='text-ignite-500 space-x-1'>{index + 1}º</span>
 									<Image
-										src=""
-										alt=""
+										src={item.image}
+										alt={item.player}
 										className='rounded-full space-x-1'
 										width={50}
 										height={50}
@@ -84,8 +85,8 @@ export default function Home({ scorers, playerMatch, games }: IHome) {
 								<strong className='text-gray-100 text-sm flex items-center space-x-1'>
 									<span className='text-yellow-500 space-x-1'>{index + 1}º</span>
 									<Image
-										src=""
-										alt=""
+										src={item.image}
+										alt={item.player}
 										className='rounded-full space-x-1'
 										width={30}
 										height={30}
@@ -172,7 +173,8 @@ export const getServerSideProps = async () => {
 		},
 		{
 			player: 'Alexsandro',
-			scorer: 24
+			scorer: 24,
+			image: "https://github.com/AlexsandroProjetosOficial.png"
 		},
 		{
 			player: 'Thiago',
@@ -305,7 +307,8 @@ export const getServerSideProps = async () => {
 		},
 		{
 			player: 'Alexsandro',
-			scorer: 3
+			scorer: 3,
+			image: "https://github.com/AlexsandroProjetosOficial.png"
 		},
 		{
 			player: 'Lekão',
