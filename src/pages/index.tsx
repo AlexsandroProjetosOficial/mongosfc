@@ -23,7 +23,7 @@ interface IHome {
 		timeBScorer: number;
 		weFriendly: 'we' | 'friendly';
 		totalScorer: number;
-		results?: "victorie" | 'defeats' | 'draw';
+		results?: "victorie" | 'defeats' | 'draw' | "victorieDefeats";
 	}[]
 }
 
@@ -119,9 +119,9 @@ export default function Home({ scorers, playerMatch, games }: IHome) {
 						<div className=' flex items-left gap-2 flex-col'>
 							<h5 className=' text-ignite-500 text-xl font-bold leading-tight'>Mongos x Mongos</h5>
 							<strong className='text-gray-100 text-sm flex items-center space-x-1'>{games.filter(item => item.weFriendly === 'we').length} Jogos</strong>
-							<strong className='text-gray-100 text-sm flex items-center space-x-1'>{games.filter(item => item.results === 'victorie' && item.weFriendly === 'we').length} Vitórias</strong>
+							<strong className='text-gray-100 text-sm flex items-center space-x-1'>{games.filter(item => item.results === 'victorieDefeats' && item.weFriendly === 'we').length} Vitórias</strong>
 							<strong className='text-gray-100 text-sm flex items-center space-x-1'>{games.filter(item => item.results === 'draw' && item.weFriendly === 'we').length} Empate</strong>
-							<strong className='text-gray-100 text-sm flex items-center space-x-1'>{games.filter(item => item.results === 'defeats' && item.weFriendly === 'we').length} Derrotas</strong>
+							<strong className='text-gray-100 text-sm flex items-center space-x-1'>{games.filter(item => item.results === 'victorieDefeats' && item.weFriendly === 'we').length} Derrotas</strong>
 							<strong className='text-gray-100 text-sm flex items-center space-x-1'>
 								{
 									games.filter(item => item.weFriendly === 'we').reduce((acumulador, valorAtual) => { return acumulador + valorAtual.totalScorer }, 0)
@@ -339,7 +339,7 @@ export const getServerSideProps = async () => {
 			timeBScorer: 7,
 			weFriendly: 'we',
 			totalScorer: 19,
-			draw: 0
+			results: 'victorieDefeats'
 		},
 		{
 			timeA: "Mongos",
